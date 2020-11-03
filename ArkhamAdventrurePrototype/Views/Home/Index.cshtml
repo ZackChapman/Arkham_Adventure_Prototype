@@ -1,0 +1,108 @@
+﻿@using System.Diagnostics.Eventing.Reader
+@model ArkhamAdventrurePrototype.Models.Scenario
+@{
+    ViewData["Title"] = "Home Page";
+}
+@{
+
+    var txt =" ";
+
+    if (DateTime.Now.Hour < 12)
+    {
+        txt = Model.Scenario1;
+    }
+    else 
+    {
+        txt = Model.Scenario275;
+    }
+
+}
+
+@*@{
+    var text = "";
+    @switch()
+}*@
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="css/styles.css" rel="stylesheet" />
+    <title></title>
+</head>
+<body>
+    <div class="screen" id="storytext">
+        <p>
+            @txt
+        </p>
+    </div>
+
+
+<!-- Scenario Navigation Buttons -->
+<div class="buttons">
+    <button type="button" class="btn btn-dark" onclick='method("@Model.Scenario2")'>Option 1</button>
+    <button type="button" class="btn btn-dark" onclick='method("@Model.Scenario187")'>Option 2</button>
+    <button type="button" class="btn btn-dark" onclick='method("@Model.Scenario315")'>Option 3</button>
+    <button type="button" class="btn btn-dark" onclick='method("@Model.Scenario302")'>Option 4</button>
+
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#staticBackdrop">
+        Menu
+    </button>
+
+    <!-- Modal -->
+    <div class="modal" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Menu</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    @*TODO: add drop down menus for inventory and 1 for equipment. 
+                Add the ability to check a box in equipment to show you are wearing it.*@
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Inventory
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </div>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Equipment
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </div>
+                        Here will be drop down menus for your inventory and equipment
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-danger">Return to Main Menu</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function method(val) { $("#storytext").text(val); }
+    @*document.onclick = function () { document.body.replace(@txt) }*@
+
+</script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>
+</html>

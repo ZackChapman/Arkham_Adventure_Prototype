@@ -1,0 +1,42 @@
+﻿html {
+    /*border: solid 1px red;*/
+/*    background-color: black;*/
+    background-image: url(https://cdn.pixabay.com/photo/2020/02/06/09/59/tree-4823675_960_720.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+body {
+    background-image: url(https://cdn.pixabay.com/photo/2020/06/07/16/18/forrest-5271093_960_720.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%,80%;
+    border: solid 10px black;
+    margin: 5% auto;
+    max-width: 60%;
+    min-height: 75%;
+}
+div.screen {
+
+    color: yellow;
+    font-size: 1vh;
+    text-shadow: 3px 3px black;
+    background-color: black;
+    border: solid 3px gray;
+    position: absolute;
+    margin: 5% auto;
+    max-width: 60%;
+    bottom: 3.5%;
+}
+div.buttons {
+    border: solid 1px cyan;
+    position: absolute;
+    bottom: 10%;
+    left: 20%;
+}
+button {
+    font-size: large;
+}
+
